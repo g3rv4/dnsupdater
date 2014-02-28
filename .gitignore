@@ -1,0 +1,15 @@
+*.suo
+*.user
+*.sln.docstates
+*.pyc
+.ptvs/
+obj/
+__pycache__/
+env/
+
+
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
