@@ -6,5 +6,13 @@ settings = {
     'zone':{
         'domain': '',
         'record': ''
+    },
+
+    'anveo':{
+        'email': '',
+        'password': '',
+        'trunks': [
+            ('0prime', 1)
+        ]
     }
 }
