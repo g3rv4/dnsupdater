@@ -1,5 +1,4 @@
 from __future__ import print_function
-import subprocess
 import urllib
 import requests
 from bs4 import BeautifulSoup
@@ -25,10 +24,6 @@ if last_ip != ip:
     route53 = Route53Connection(settings['aws_key'], settings['aws_secret'])
     zone = route53.get_zone(settings['zone']['domain'])
     zone.update_a(settings['zone']['record'], ip)
-
-    try:
-        subprocess.call('asterisk -rx "sip unregister oficina"', shell=True)
-    except: pass
 
     s = requests.Session()
     res = s.post("https://www.anveo.com/logina.asp", "txtAction=save&txtUrl=&atl=Sun+Oct+20+22%3A29%3A26+UTC-0200+2013%5BSunday%2C+October+20%2C+2013+10%3A29%3A26+PM%5D&txtEmail=" + urllib.quote_plus(settings['anveo']['email']) + "&txtPassword=" + urllib.quote_plus(settings['anveo']['password']) + "&submit=Enter", headers = {"Content-Type" : "application/x-www-form-urlencoded"})
