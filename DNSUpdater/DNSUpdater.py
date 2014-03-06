@@ -40,6 +40,6 @@ if last_ip != ip:
     for trunk in settings['anveo']['trunks']:
         res = s.get("https://www.anveo.com/_outboundTrunksEdit.asp?txtFormSKey=" + str(trunk[1]) + "&s=&txtAction=save&title=Prime%20Route&prefix=" + urllib.quote_plus(trunk[0]) + "&cap=0.5&concurrent_calls_limit=&notes=&ips=" + ip + "%0A&provider_ids=&provider_ids=&provider_ids=&provider_ids=&provider_ids=&provider_ids=&provider_ids=&provider_ids=&provider_ids=&provider_ids=&provider_ids=&provider_ids=&provider_ids=&provider_ids=&provider_ids=&provider_ids=&provider_ids=&provider_ids=&provider_ids=&provider_ids=&provider_ids=&provider_ids=&provider_ids=&provider_ids=&provider_ids=&provider_ids=&provider_ids=&provider_ids=&provider_ids=&provider_ids=&provider_ids=&is_rate_cap_set=1&is_concurrent_calls_limit_set=0&type_id=100&provider_select_type_id=2&depth=5&call_order_type_id=2&")
 
-    f = open('lastIp.txt','w')
+    f = open('lastLocalIp.txt','w')
     print(ip, file=f)
     f.close()
